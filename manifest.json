@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Перевод чисел в двоичную систему",
+    "description": "Перевод чисел в двоичную систему",
+    "author": "Никита Коваленко",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "/assets/icon.png",
+        "default_popup": "/assets/index.html"
+    },
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "/assets/main.js"
+            ]
+        }
+    ]
+}
