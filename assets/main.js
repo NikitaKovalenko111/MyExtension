@@ -1,6 +1,43 @@
 const numberInput = document.querySelector('.number-input');
 const resultText = document.querySelector('.result');
-const memory = document.querySelectorAll('button');
+const settingsButton = document.querySelector('.settings-button');
+const submitButton = document.querySelector('.submit');
+const darkthemeCheckbox = document.querySelector('#dark-theme');
+
+function darkTheme() {
+    localStorage.setItem('dark-theme', true);
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('h1').style.color = 'white';
+    document.querySelector('label').style.color = 'white';
+     document.querySelectorAll('button').forEach(function(item) {
+        item.style.background = "white";
+        item.style.color = "black";
+    });
+    document.querySelectorAll("p").forEach(function(item) {
+        item.style.color = 'white';
+    });
+}
+
+if (localStorage.getItem('dark-theme') == 'true') {
+    darkTheme();
+}
+
+if (settingsButton) {
+    settingsButton.addEventListener('click', function() {
+        document.location.href = '/assets/settings.html';
+    });
+};
+
+if (submitButton) {
+    submitButton.addEventListener('click', function() {
+        if (darkthemeCheckbox) {
+            if (darkthemeCheckbox.checked) {
+                darkTheme(); 
+            }
+        }
+        document.location.href = '/assets/index.html';
+    });
+};
 
 function topclang(num) {
     let sIndex = num % 2;
@@ -24,14 +61,14 @@ function topclang(num) {
 let func = topclang();
 
 numberInput.addEventListener('change', function () {
-    if (numberInput.value == '') {
-        resultText.textContent = '';
-    }
-    else {
-        func = topclang(numberInput.value);
-        func();
-    }
-});
+        if (numberInput.value == '') {
+            resultText.textContent = '';
+        }
+        else {
+            func = topclang(numberInput.value);
+            func();
+        }
+    });
 
 
 
