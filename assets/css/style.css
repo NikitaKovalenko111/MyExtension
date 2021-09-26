@@ -1,9 +1,46 @@
+@-webkit-keyframes settings-hover {
+  0% {
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes settings-hover {
+  0% {
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 * {
   padding: 0;
 }
 
 * body {
   width: 300px;
+}
+
+* body .settings-text {
+  position: absolute;
+  top: 12px;
+  left: 80px;
+  font-size: 20px;
+}
+
+* body .settingsButton {
+  width: 15%;
+}
+
+* body .settingsButton:hover {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: settings-hover;
+          animation-name: settings-hover;
+  cursor: pointer;
 }
 
 * body .submit {

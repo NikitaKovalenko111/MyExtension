@@ -1,6 +1,22 @@
+@keyframes settings-hover
+            0%
+                
+            100%
+                transform: rotate(360deg)
 *
     padding: 0
     body
+        .settings-text
+            position: absolute
+            top: 12px
+            left: 80px
+            font-size: 20px
+        .settingsButton
+            width: 15%
+            &:hover
+                animation-duration: 2s
+                animation-name: settings-hover
+                cursor: pointer
         .submit
             margin-top: 20px
         label

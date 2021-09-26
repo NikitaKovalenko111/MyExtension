@@ -1,10 +1,11 @@
 const numberInput = document.querySelector('.number-input');
 const resultText = document.querySelector('.result');
-const settingsButton = document.querySelector('.settings-button');
+const settingsButton = document.querySelector('.settingsButton');
 const submitButton = document.querySelector('.submit');
 const darkthemeCheckbox = document.querySelector('#dark-theme');
 const removeauthorCheckbox = document.querySelector("#remove-author");
 const author = document.querySelector("#author");
+const settingsText = document.querySelector('.settings-text');
 
 if (localStorage.getItem('dark-theme') == 'true') {
     darkTheme();
@@ -99,6 +100,12 @@ function lightTheme() {
 }
 
 if (settingsButton) {
+    settingsButton.addEventListener('mouseenter', function() {
+        settingsText.style.opacity = "100%";
+    });
+    settingsButton.addEventListener('mouseleave', function() {
+        settingsText.style.opacity = "0%";
+    });
     settingsButton.addEventListener('click', function() {
         document.location.href = '/assets/settings.html';
     });
