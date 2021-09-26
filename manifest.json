@@ -18,7 +18,7 @@
                 "<all_urls>"
             ],
             "js": [
-                "/assets/main.js"
+                "/assets/js/main.js"
             ]
         }
     ]
