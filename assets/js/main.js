@@ -48,8 +48,6 @@ numberInput.addEventListener('change', function () {
 function darkTheme() {
     localStorage.setItem('dark-theme', true);
     document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.border = 'solid 1px white';
-    document.querySelector('body').style.padding = '15px';
     document.querySelectorAll('h1').forEach(function(item) {
         item.style.color = 'white';
     });
