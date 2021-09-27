@@ -3,13 +3,14 @@ const resultText = document.querySelector('.result');
 const settingsButton = document.querySelector('.settingsButton');
 const submitButton = document.querySelector('.submit');
 const darkthemeCheckbox = document.querySelector('#dark-theme');
-const removeauthorCheckbox = document.querySelector("#remove-author");
+let removeauthorCheckbox = document.querySelector("#remove-author");
 const author = document.querySelector("#author");
 const settingsText = document.querySelector('.settings-text');
 
 if (localStorage.getItem('dark-theme') == 'true') {
     darkTheme();
 }
+
 if (localStorage.getItem('author') == 'false') {
     author.style.display = "none";
 }
@@ -22,7 +23,13 @@ function topclang(num) {
         if (index / 2 == 1 || index / 2 == 0) {
             result += '0';
             result += Math.floor(index / 2);
-            resultText.textContent = `${result.split("").reverse().join("")}`;
+            if (result.split('')[result.length - 1] == '0' && result.split('')[result.length - 2] == '0') {
+                let resultSecond = result.split('').splice(0, result.length - 2).join('');
+                resultText.textContent = `${resultSecond.split("").reverse().join("")}`;
+            }
+            else {
+                resultText.textContent = `${result.split("").reverse().join("")}`;
+            }
         }
         else {
             sIndex = index % 2;
