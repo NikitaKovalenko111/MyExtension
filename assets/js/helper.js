@@ -1,5 +1,10 @@
 if (localStorage.getItem('dark-theme') == 'true') {
+    darkthemeCheckbox.checked = true;
     darkTheme();
+}
+
+if (localStorage.getItem('author') == 'false') {
+    removeauthorCheckbox.checked = true;
 }
 
 if (submitButton) {
